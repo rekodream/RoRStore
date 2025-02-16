@@ -73,4 +73,13 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Enable DNS rebinding protection and other `Host` header attacks.
+  config.hosts = [
+    "jingkeke.cn",     # Allow requests from example.com
+    "jingkeke.com",     # Allow requests from example.com
+    /.*\.jingkeke\.com/ # Allow requests from subdomains like `www.example.com`
+  ]
+  # Skip DNS rebinding protection for the default health check endpoint.
+  # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 end
