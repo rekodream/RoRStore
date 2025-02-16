@@ -7,6 +7,9 @@ This app uses:
 * Ruby 3.3 and Ruby on Rails 7.2
 * Mysql
 
+## Prepare
+Add your own database.yml by `mv database.yml.example database.yml`, and modify mysql connection info.
+
 ## Installation
 
 Make sure you have the following installed:
